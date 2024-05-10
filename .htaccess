@@ -1,0 +1,40 @@
+
+RewriteEngine On
+RewriteBase /webkye/
+
+# Exclude CSS files from rewriting
+RewriteCond %{REQUEST_URI} !\.(css|js|jpg|jpeg|png|gif|)$ [NC]
+
+# Ensure that the request is not for an existing file or directory
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [L]
+
+# RewriteRule ^([^/\.]+)?$ personal-detail.php?temp=$1
+
+# Redirect /home to /index.php
+RewriteRule ^home$ /index.php [L]
+
+
+# Pass parameters in a clean way
+RewriteRule ^portfolio/([^/]+)/?$ portfolio-detail.php?url=$1 [L]
+#RewriteRule ^create-cover-letter/([^/]+)/?$ create_cover.php?temp=$1 [L]
+#RewriteRule ^create-resume/([^/]+)/?$ create_resume.php?temp=$1 [L]
+
+#RewriteRule ^education-details/([^/]+)/([^/]+)/?$ education.php?temp=$1&id=$2 [L]
+#RewriteRule ^experience-details/([^/]+)/([^/]+)/?$ experience.php?temp=$1&id=$2 [L]
+#RewriteRule ^skill-details/([^/]+)/([^/]+)/?$ skill.php?temp=$1&id=$2 [L]
+#RewriteRule ^socail-media-link/([^/]+)/([^/]+)/?$ socail-media.php?temp=$1&id=$2 [L]
+#RewriteRule ^view-resume/([^/]+)/?$ resume.php?id=$1 [L]
+#RewriteRule ^view-cover-letter/([^/]+)/?$ cover-letter.php?id=$1 [L]
+
+# Handling preview with template-preview
+#RewriteRule ^preview-template/([^/]+)/?$ template-preview.php?temp=$1 [L]
+#RewriteRule ^preview-cover-letter/([^/]+)/?$ preview-cover-template.php?temp=$1 [L]
+#RewriteRule ^create-portfolio/your-skill/([^/]+)/?$ portfolio-skill.php?pid=$1 [L]
+#RewriteRule ^create-portfolio/socail-media/([^/]+)/?$ portfolio-socail.php?pid=$1 [L]
+#RewriteRule ^create-portfolio/add-project/([^/]+)/?$ projects.php?pid=$1 [L]
+#RewriteRule ^create-portfolio/awards/([^/]+)/?$ add-award.php?pid=$1 [L]
+#RewriteRule ^portfolio/([^/]+)/?$ myPortfolio.php?username=$1 [L]
+#RewriteRule ^edit-resume/([^/]+)/?$ edit_resume.php?id=$1 [L]
+#RewriteRule ^edit-cover-letter/([^/]+)/?$ edit_cover.php?id=$1 [L]

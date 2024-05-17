@@ -117,8 +117,12 @@
                     </div>
                 </li> -->
 
-
                 <li class="nav-item">
+                    <a href="account" class="nav-link menu-link"><i class="bi bi-person-circle"></i>  <span
+                            data-key="t-reviews-ratings">Accounts</span></a>
+                </li>
+
+                <!-- <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarAccounts" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarAccounts">
                         <i class="bi bi-person-circle"></i> <span data-key="t-accounts">Accounts</span>
@@ -144,7 +148,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> -->
 
             </ul>
         </div>

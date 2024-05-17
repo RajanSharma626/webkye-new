@@ -29,7 +29,7 @@ if (isset($_POST["addReview"]) && $_POST["addReview"] != '') {
     $name = get_safe_value($conn, $_POST['name']);
     $designation = get_safe_value($conn, $_POST['designation']);
 
-    move_uploaded_file($_FILES["profile"]["tmp_name"], "../assets/images/team/" . $profile);
+    move_uploaded_file($_FILES["profile"]["tmp_name"], "../assets/img/team/" . $profile);
     $sql = mysqli_query($conn, "INSERT INTO `team`(`name`, `designation`, `profile`) VALUES ('$name','$designation','$profile')");
 
     if ($sql) {
@@ -46,7 +46,7 @@ if (isset($_POST["UpdateReviewe"]) && $_POST["UpdateReviewe"] != '') {
 
     if ($_FILES['profile']['name'] != '') {
 
-        move_uploaded_file($_FILES["profile"]["tmp_name"], "../assets/images/review/" . $profile);
+        move_uploaded_file($_FILES["profile"]["tmp_name"], "../assets/img/team/" . $profile);
 
         $sql = mysqli_query($conn, "UPDATE `team` SET `name`='$name',`designation`='$designation',`profile`='$profile' WHERE `id` = '$id'");
 
@@ -144,7 +144,7 @@ if (isset($_POST["UpdateReviewe"]) && $_POST["UpdateReviewe"] != '') {
                                             <?php
                                             if ($img != '') {
                                                 ?>
-                                                <img src="../assets/images/team/<?php echo $img; ?>" class="mt-2" alt=""
+                                                <img src="../assets/img/team/<?php echo $img; ?>" class="mt-2" alt=""
                                                     width="50px">
                                             <?php } ?>
                                         </div>

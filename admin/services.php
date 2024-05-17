@@ -83,6 +83,9 @@ if (isset($_GET['type']) && $_GET['type'] != '') {
                                             Description
                                         </th>
                                         <th>
+                                            SEO URL
+                                        </th>
+                                        <th>
                                             Action
                                         </th>
                                     </thead>
@@ -106,6 +109,9 @@ if (isset($_GET['type']) && $_GET['type'] != '') {
                                                 </td>
                                                 <td class="align-middle" >
                                                     <?php echo $row['description'] ?>
+                                                </td>
+                                                <td class="align-middle" >
+                                                    <?php echo $row['seo_url'] ?>
                                                 </td>
                                                 <td class="align-middle" >
                                                     <ul class="hstack gap-2 list-unstyled mb-0">

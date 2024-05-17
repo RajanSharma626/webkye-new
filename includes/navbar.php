@@ -14,12 +14,12 @@
                     <ul class="d-xl-flex menu__list">
                         <li class="dropdown__container">
                             <div class="d-flex justify-content-between align-items-center gap-1">
-                                <a href="index.html">Home</a>
+                                <a href="/">Home</a>
                             </div>
                         </li>
                         <li class="dropdown__container">
                             <div class="d-flex justify-content-between align-items-center gap-1">
-                                <a href="about.html">About Us</a>
+                                <a href="about-us">About Us</a>
                             </div>
                         </li>
                         <li class="dropdown__container">
@@ -27,15 +27,15 @@
                                 <a href="services.html">Services</a><i class="fa fa-angle-down"></i>
                             </div>
                             <ul class="dropdown__container_menu">
-                                <li><a href="digital-marketing">Digital Marketing</a></li>
-                                <li><a href="search-engine-optimization" style="text-wrap: nowrap;">Search Engine
-                                        Optimization</a>
-                                </li>
-                                <li><a href="web-development">Web Development</a></li>
-                                <li><a href="graphic-designing">Graphic Designing</a></li>
-                                <li><a href="ui-ux-designing">UI/UX Designing</a></li>
-                                <li><a href="video-editing">Video Editing</a></li>
-                                <li><a href="paid-ads-advertiment">Paid Ads</a></li>
+                                <?php
+                                $services = mysqli_query($conn, "SELECT * FROM `services`");
+                                $sno = 1;
+                                while ($row = mysqli_fetch_assoc($services)) {
+                                    ?>
+                                    <li><a href="<?php echo $row['seo_url'] ?>"
+                                            style="text-wrap: nowrap;"><?php echo $row['heading'] ?></a>
+                                    </li>
+                                <?php } ?>
                             </ul>
                         </li>
                         <li class="dropdown__container">

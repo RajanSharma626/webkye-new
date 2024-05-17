@@ -65,7 +65,7 @@ if (isset($_POST["addProject"]) && $_POST["addProject"] != '') {
     $serializedTags = serialize($tagsArray);
 
 
-    move_uploaded_file($_FILES["cover"]["tmp_name"], "../assets/images/portfolio/" . $cover);
+    move_uploaded_file($_FILES["cover"]["tmp_name"], "../assets/img/projects/" . $cover);
     $sql = mysqli_query($conn, "INSERT INTO `project`(`title`,`subtitle`, `short_desc`, `long_desc`, `client`, `url`,`cat`, `cover`, `alt_text`, `date`, `tags`, `seo_url`, `meta_keywords`) VALUES 
                                                      ('$heading','$subheading','$short_desc','$desc','$client_name','$project_url','$cat','$cover','$cover_alt_text','$date','$serializedTags','$seo_url','$keywords')");
 
@@ -83,7 +83,7 @@ if (isset($_POST["addProject"]) && $_POST["addProject"] != '') {
                 $moreImageName = rand(111, 999) . "_" . $moreImage;
 
                 // Move the uploaded file to the destination folder
-                move_uploaded_file($moreImageTmp, "../assets/images/portfolio/" . $moreImageName);
+                move_uploaded_file($moreImageTmp, "../assets/img/projects/" . $moreImageName);
 
                 // Insert the image details into the project_images table
                 $sql = mysqli_query($conn, "INSERT INTO `project_images` (`project_id`, `img`, `alt_text`) VALUES ('$projectId', '$moreImageName', '$moreImageAltText')");
@@ -119,7 +119,7 @@ if (isset($_POST["UpdateProject"]) && $_POST["UpdateProject"] != '') {
 
     if ($_FILES['cover']['name'] != '') {
 
-        move_uploaded_file($_FILES["cover"]["tmp_name"], "../assets/images/portfolio/" . $cover);
+        move_uploaded_file($_FILES["cover"]["tmp_name"], "../assets/img/projects/" . $cover);
 
         $sql = mysqli_query($conn, "UPDATE `project` SET 
          `title`='$heading',
@@ -151,7 +151,7 @@ if (isset($_POST["UpdateProject"]) && $_POST["UpdateProject"] != '') {
                         $moreImageName = rand(111, 999) . "_" . $moreImage;
 
                         // Move the uploaded file to the destination folder
-                        move_uploaded_file($moreImageTmp, "../assets/images/portfolio/" . $moreImageName);
+                        move_uploaded_file($moreImageTmp, "../assets/img/projects/" . $moreImageName);
 
                         // Insert the image details into the project_images table
                         $sql = mysqli_query($conn, "INSERT INTO `project_images` (`project_id`, `img`, `alt_text`) VALUES ('$id', '$moreImageName', '$moreImageAltText')");
@@ -193,7 +193,7 @@ if (isset($_POST["UpdateProject"]) && $_POST["UpdateProject"] != '') {
                         $moreImageName = rand(111, 999) . "_" . $moreImage;
 
                         // Move the uploaded file to the destination folder
-                        move_uploaded_file($moreImageTmp, "../assets/images/portfolio/" . $moreImageName);
+                        move_uploaded_file($moreImageTmp, "../assets/img/projects/" . $moreImageName);
 
                         // Insert the image details into the project_images table
                         $sql = mysqli_query($conn, "INSERT INTO `project_images` (`project_id`, `img`, `alt_text`) VALUES ('$id', '$moreImageName', '$moreImageAltText')");
@@ -292,8 +292,8 @@ if (isset($_GET['removeimg']) && !empty($_GET['removeimg'])) {
                                             <?php
                                             if ($cover != '') {
                                                 ?>
-                                                <img src="../assets/images/portfolio/<?php echo $cover; ?>" class="mt-2"
-                                                    alt="" width="100px">
+                                                <img src="../assets/img/projects/<?php echo $cover; ?>" class="mt-2" alt=""
+                                                    width="100px">
                                             <?php } ?>
                                         </div>
                                         <div class="mb-3">
@@ -344,11 +344,13 @@ if (isset($_GET['removeimg']) && !empty($_GET['removeimg'])) {
                                             <label class="form-label" for="service-icon-input">Project Category</label>
                                             <select name="cat" id="" class="form-control">
                                                 <option value="" selected disabled>- Select -</option>
-                                                <option value="UI/UX" <?php echo ($cat == "UI/UX") ? "selected" :""; ?>>UI/UX</option>
-                                                <option value="website" <?php echo ($cat == "website") ? "selected" :""; ?>>Website
+                                                <option value="UI/UX" <?php echo ($cat == "UI/UX") ? "selected" : ""; ?>>
+                                                    UI/UX</option>
+                                                <option value="website" <?php echo ($cat == "website") ? "selected" : ""; ?>>Website
                                                 </option>
-                                                <option value="graphic" <?php echo ($cat == "graphic") ? "selected" :""; ?>>Graphic Design</option>
-                                                <option value="Videos" <?php echo ($cat == "Videos") ? "selected" :""; ?>>Video Editing</option>
+                                                <option value="graphic" <?php echo ($cat == "graphic") ? "selected" : ""; ?>>Graphic Design</option>
+                                                <option value="Videos" <?php echo ($cat == "Videos") ? "selected" : ""; ?>>
+                                                    Video Editing</option>
                                             </select>
                                         </div>
                                         <div class="mb-3">
@@ -382,7 +384,7 @@ if (isset($_GET['removeimg']) && !empty($_GET['removeimg'])) {
                                                                             class="bi bi-trash3"></i></a>
                                                                 </div>
                                                             </div>
-                                                            <img src="../assets/images/portfolio/<?php echo $row['img']; ?>"
+                                                            <img src="../assets/img/projects/<?php echo $row['img']; ?>"
                                                                 class="mt-2 uploaded-image" alt="" width="100px">
                                                         </div>
 

@@ -70,6 +70,11 @@ p {
     margin-bottom: 0
 }
 
+.active-page {
+    background-color: #F6D273 !important;
+    color: #051F0D !important;
+}
+
 .t__40 {
     font-size: 40px;
     color: var(--primary-clr);
@@ -2579,9 +2584,6 @@ p {
     top: 0
 }
 
-.map {
-    margin-bottom: 181px
-}
 
 .map iframe {
     width: 100%;

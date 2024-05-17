@@ -92,7 +92,7 @@ if (isset($_GET['type']) && $_GET['type'] != '') {
                                                         <td class="user_name">
                                                             <div class="d-flex align-items-center gap-2">
                                                                 <div class="flex-shrink-0">
-                                                                    <img src="../assets/images/team/<?php echo $row['profile'] ?>" alt=""
+                                                                    <img src="../assets/img/team/<?php echo $row['profile'] ?>" alt=""
                                                                         class="avatar-xs rounded-circle user-profile-img">
                                                                 </div>
                                                                 <span class="user-name"><?php echo $row['name'] ?></span>

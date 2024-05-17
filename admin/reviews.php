@@ -98,7 +98,7 @@ if (isset($_GET['type']) && $_GET['type'] != '') {
                                             <?php echo $row['comment'] ?>
                                         </p>
                                         <h6 class="mb-0 text-uppercase">
-                                            <?php echo $row['designation'] ?>
+                                            <?php echo $row['country_name'] ?>
                                         </h6>
                                     </div>
                                 </div>

@@ -78,7 +78,7 @@ if (isset($_GET['type']) && $_GET['type'] != '') {
                                     <div class="card-body">
 
                                         <div>
-                                            <img src="../assets/images/portfolio/<?php echo $row['cover']?>" alt="<?php echo $row['alt_text']?>"
+                                            <img src="../assets/img/projects/<?php echo $row['cover']?>" alt="<?php echo $row['alt_text']?>"
                                                 class="rounded img-fluid"> &nbsp;
                                             <h5 class="mb-0 text-uppercase">
                                                 <?php echo $row['title'] ?>

@@ -54,8 +54,8 @@ if (isset($_POST["addBlog"]) && $_POST["addBlog"] != '') {
     $keywords = get_safe_value($conn, $_POST['meta_keywords']);
 
 
-    move_uploaded_file($_FILES["cover"]["tmp_name"], "../assets/images/post/" . $cover);
-    move_uploaded_file($_FILES["banner"]["tmp_name"], "../assets/images/post/" . $banner);
+    move_uploaded_file($_FILES["cover"]["tmp_name"], "../assets/img/blogs/" . $cover);
+    move_uploaded_file($_FILES["banner"]["tmp_name"], "../assets/img/blogs/" . $banner);
 
     $sql = mysqli_query($conn, "INSERT INTO `blogs`(`title`, `short_desc`, `blog`,`banner`,`banner_alt_text`, `cover`,`cover_alt_text`, `seo_url`, `meta_keywords`) VALUES 
                                                 ('$title','$short_desc','$blog','$banner','$banner_alt_text','$cover','$cover_alt_text','$seo_url','$keywords')");
@@ -89,7 +89,7 @@ if (isset($_POST["UpdateProject"]) && $_POST["UpdateProject"] != '') {
 
     if ($_FILES['cover']['name'] != '') {
 
-        move_uploaded_file($_FILES["cover"]["tmp_name"], "../assets/images/portfolio/" . $cover);
+        move_uploaded_file($_FILES["cover"]["tmp_name"], "../assets/img/blogs/" . $cover);
 
         $sql = mysqli_query($conn, "UPDATE `project` SET 
          `title`='$heading',
@@ -121,7 +121,7 @@ if (isset($_POST["UpdateProject"]) && $_POST["UpdateProject"] != '') {
                         $moreImageName = rand(111, 999) . "_" . $moreImage;
 
                         // Move the uploaded file to the destination folder
-                        move_uploaded_file($moreImageTmp, "../assets/images/portfolio/" . $moreImageName);
+                        move_uploaded_file($moreImageTmp, "../assets/img/blogs/" . $moreImageName);
 
                         // Insert the image details into the project_images table
                         $sql = mysqli_query($conn, "INSERT INTO `project_images` (`project_id`, `img`, `alt_text`) VALUES ('$id', '$moreImageName', '$moreImageAltText')");
@@ -163,7 +163,7 @@ if (isset($_POST["UpdateProject"]) && $_POST["UpdateProject"] != '') {
                         $moreImageName = rand(111, 999) . "_" . $moreImage;
 
                         // Move the uploaded file to the destination folder
-                        move_uploaded_file($moreImageTmp, "../assets/images/portfolio/" . $moreImageName);
+                        move_uploaded_file($moreImageTmp, "../assets/img/blogs/" . $moreImageName);
 
                         // Insert the image details into the project_images table
                         $sql = mysqli_query($conn, "INSERT INTO `project_images` (`project_id`, `img`, `alt_text`) VALUES ('$id', '$moreImageName', '$moreImageAltText')");
@@ -262,7 +262,7 @@ if (isset($_GET['removeimg']) && !empty($_GET['removeimg'])) {
                                             <?php
                                             if ($cover != '') {
                                                 ?>
-                                                <img src="../assets/images/portfolio/<?php echo $cover; ?>" class="mt-2"
+                                                <img src="../assets/img/blogs/<?php echo $cover; ?>" class="mt-2"
                                                     alt="" width="100px">
                                             <?php } ?>
                                         </div>
@@ -279,7 +279,7 @@ if (isset($_GET['removeimg']) && !empty($_GET['removeimg'])) {
                                             <?php
                                             if ($cover != '') {
                                                 ?>
-                                                <img src="../assets/images/portfolio/<?php echo $cover; ?>" class="mt-2"
+                                                <img src="../assets/img/blogs/<?php echo $cover; ?>" class="mt-2"
                                                     alt="" width="100px">
                                             <?php } ?>
                                         </div>

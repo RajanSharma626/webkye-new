@@ -6,7 +6,7 @@ $id = "";
 $img = "";
 $name = "";
 $review = "";
-$designation = "";
+$country_name = "";
 $flag = "";
 $project = "";
 
@@ -22,7 +22,7 @@ if (isset($_GET['id']) && $_GET['id'] != "") {
         $img = $row['profile'];
         $name = $row['name'];
         $review = $row['comment'];
-        $designation = $row['designation'];
+        $country_name = $row['country_name'];
         $flag = $row['country'];
         $project = $row['project'];
     }
@@ -35,12 +35,12 @@ if (isset($_POST["addReview"]) && $_POST["addReview"] != '') {
     $flag = get_safe_value($conn, rand(11, 999) . $_FILES['flag']['name']);
     $name = get_safe_value($conn, $_POST['name']);
     $review = get_safe_value($conn, $_POST['review']);
-    $designation = get_safe_value($conn, $_POST['designation']);
+    $country_name = get_safe_value($conn, $_POST['country_name']);
     $project = get_safe_value($conn, $_POST['project']);
 
     move_uploaded_file($_FILES["profile"]["tmp_name"], "../assets/img/review/" . $profile);
     move_uploaded_file($_FILES["flag"]["tmp_name"], "../assets/img/review/" . $flag);
-    $sql = mysqli_query($conn, "INSERT INTO `testimonials`(`name`, `designation`, `profile`, `country`, `comment`,`project`) VALUES ('$name','$designation','$profile','$flag','$review', '$project')");
+    $sql = mysqli_query($conn, "INSERT INTO `testimonials`(`name`, `country_name`, `profile`, `country`, `comment`,`project`) VALUES ('$name','$country_name','$profile','$flag','$review', '$project')");
 
     if ($sql) {
         header("Location: reviews");
@@ -54,7 +54,7 @@ if (isset($_POST["UpdateReviewe"]) && $_POST["UpdateReviewe"] != '') {
     $flag = get_safe_value($conn, rand(11, 999) . $_FILES['flag']['name']);
     $name = get_safe_value($conn, $_POST['name']);
     $review = get_safe_value($conn, $_POST['review']);
-    $designation = get_safe_value($conn, $_POST['designation']);
+    $country_name = get_safe_value($conn, $_POST['country_name']);
     $project = get_safe_value($conn, $_POST['project']);
 
     if ($_FILES['profile']['name'] != '' && $_FILES['flag']['name'] != '') {
@@ -62,7 +62,7 @@ if (isset($_POST["UpdateReviewe"]) && $_POST["UpdateReviewe"] != '') {
         move_uploaded_file($_FILES["profile"]["tmp_name"], "../assets/img/review/" . $profile);
         move_uploaded_file($_FILES["flag"]["tmp_name"], "../assets/img/review/" . $flag);
 
-        $sql = mysqli_query($conn, "UPDATE `testimonials` SET `name`='$name',`designation`='$designation',`profile`='$profile',`country`='$flag ',`comment`='$review',`project`='$project' WHERE `id` = '$id'");
+        $sql = mysqli_query($conn, "UPDATE `testimonials` SET `name`='$name',`country_name`='$country_name',`profile`='$profile',`country`='$flag ',`comment`='$review',`project`='$project' WHERE `id` = '$id'");
 
         if ($sql) {
             header("Location: reviews");
@@ -71,7 +71,7 @@ if (isset($_POST["UpdateReviewe"]) && $_POST["UpdateReviewe"] != '') {
 
         move_uploaded_file($_FILES["flag"]["tmp_name"], "../assets/img/review/" . $flag);
 
-        $sql = mysqli_query($conn, "UPDATE `testimonials` SET `name`='$name',`designation`='$designation',`country`='$flag ',`comment`='$review',`project`='$project' WHERE `id` = '$id'");
+        $sql = mysqli_query($conn, "UPDATE `testimonials` SET `name`='$name',`country_name`='$country_name',`country`='$flag ',`comment`='$review',`project`='$project' WHERE `id` = '$id'");
 
         if ($sql) {
             header("Location: reviews");
@@ -79,14 +79,14 @@ if (isset($_POST["UpdateReviewe"]) && $_POST["UpdateReviewe"] != '') {
     } elseif ($_FILES['profile']['name'] != '' && $_FILES['flag']['name'] == '') {
         move_uploaded_file($_FILES["profile"]["tmp_name"], "../assets/img/review/" . $profile);
 
-        $sql = mysqli_query($conn, "UPDATE `testimonials` SET `name`='$name',`designation`='$designation',`profile`='$profile',`comment`='$review',`project`='$project' WHERE `id` = '$id'");
+        $sql = mysqli_query($conn, "UPDATE `testimonials` SET `name`='$name',`country_name`='$country_name',`profile`='$profile',`comment`='$review',`project`='$project' WHERE `id` = '$id'");
 
         if ($sql) {
             header("Location: reviews");
         }
     } else {
 
-        $sql = mysqli_query($conn, "UPDATE `testimonials` SET `name`='$name',`designation`='$designation',`comment`='$review',`project`='$project' WHERE `id` = '$id'");
+        $sql = mysqli_query($conn, "UPDATE `testimonials` SET `name`='$name',`country_name`='$country_name',`comment`='$review',`project`='$project' WHERE `id` = '$id'");
 
         if ($sql) {
             header("Location: reviews");
@@ -198,11 +198,11 @@ if (isset($_GET['removeimg']) && !empty($_GET['removeimg'])) {
                                                 required><?php echo $review ?></textarea>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label" for="service-icon-input">Designation</label>
+                                            <label class="form-label" for="service-icon-input">Country Name</label>
                                             <input type="text" class="form-control" id="service-icon-input"
-                                                name="designation" value="<?php echo $designation ?>"
-                                                placeholder="Enter Designation">
-                                            <div class="invalid-feedback">Please enter a Designation.</div>
+                                                name="country_name" value="<?php echo $country_name ?>"
+                                                placeholder="Enter Country Name">
+                                            <div class="invalid-feedback">Please enter a country_name.</div>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="service-icon-input">Country Flag</label>

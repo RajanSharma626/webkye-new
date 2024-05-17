@@ -32,7 +32,7 @@
                                 $sno = 1;
                                 while ($row = mysqli_fetch_assoc($services)) {
                                     ?>
-                                    <li><a href="<?php echo $row['seo_url'] ?>"
+                                    <li><a href="service/<?php echo $row['seo_url'] ?>"
                                             style="text-wrap: nowrap;"><?php echo $row['heading'] ?></a>
                                     </li>
                                 <?php } ?>

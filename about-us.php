@@ -204,14 +204,14 @@
             <div class="prj__card">
               <img src="assets/img/projects/<?php echo $row['cover'] ?>" alt="<?php echo $row['alt_text'] ?>" />
               <div class="card__footer">
-                <div class="client__name">
-                  <small>Client</small>
-                  <p><?php echo $row['client'] ?></p>
-                </div>
-                <span class="border__full"></span>
                 <div>
                   <h5 class="t__22"><?php echo $row['title'] ?></h5>
                   <p class="last"><?php echo $row['cat'] ?></p>
+                </div>
+                <span class="border__full"></span>
+                <div class="client__name fw-bold"> <small><a href="portfolio/<?php echo $row['seo_url'] ?>">View
+                      More</a></small>
+                  <!-- <p></p> -->
                 </div>
               </div>
             </div>
@@ -220,8 +220,8 @@
         <?php } ?>
 
         <div class="col-12 mt-4 mt-lg-0 text-center">
-          <a href="#" class="common__btn_yellow">
-            View All News <i class="ti-arrow-top-right"></i></a>
+          <a href="portfolios" class="common__btn_yellow">
+            View all <i class="ti-arrow-top-right"></i></a>
         </div>
       </div>
     </div>

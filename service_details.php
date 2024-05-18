@@ -22,7 +22,9 @@ if (isset($_GET['service']) && $_GET['service'] != '') {
 
 <head>
   <?php include ("includes/head.php") ?>
-  <title>Webkye <?php echo $serviceDetail['heading'] ?> Service </title>
+  <title><?php echo $serviceDetail['meta_title'] ?> | Webkye</title>
+  <meta name="description" content="<?php echo $serviceDetail['meta_desc'] ?>">
+  <meta name="keywords" content="<?php echo $serviceDetail['meta_keyword'] ?>">
 </head>
 
 <body>
@@ -76,7 +78,7 @@ if (isset($_GET['service']) && $_GET['service'] != '') {
               <?php echo $serviceDetail['heading'] ?>
             </h2>
             <div class="pt__35 text-light">
-            <?php echo $serviceDetail['detail'] ?>
+              <?php echo $serviceDetail['detail'] ?>
             </div>
           </div>
           <div class="second__para pt__60">
@@ -113,7 +115,7 @@ if (isset($_GET['service']) && $_GET['service'] != '') {
         <div> <!-- process title start-->
           <div class="title__area">
             <div class="transparent__btn">How It Work</div>
-            <h2 class="t__40 pt__30"> How Kulan Is Work Process For Our Marketing Customer</h2>
+            <h2 class="t__40 pt__30">How Our Work Process For Our Marketing Customer</h2>
           </div>
           <img src="assets/img/work_prc_bg.png" alt="" class="bg__img">
         </div> <!-- process title end-->
@@ -121,24 +123,31 @@ if (isset($_GET['service']) && $_GET['service'] != '') {
         <div> <!-- process list start-->
           <ul>
             <li>
-              <h3 class="t__22 d-flex align-items-center gap-3"><span class="no">01</span><span>Strategy</span></h3>
-              <p>Based on the insights gathered, we develop a comprehensive SEO strategy is a tailored to your
-                business's unique needs and objectives.</p>
+              <h3 class="t__22 d-flex align-items-center gap-3">
+                <span class="no">01</span><span>Planning </span>
+              </h3>
+              <p>
+                We start with a detailed discussion to understand your goals and requirements,
+                followed by crafting a customized plan tailored to your needs.
+              </p>
             </li>
             <li>
-              <h3 class="t__22 d-flex align-items-center gap-3"><span class="no">02</span><span>Strategy</span></h3>
-              <p>Based on the insights gathered, we develop a comprehensive SEO strategy is a tailored to your
-                business's unique needs and objectives.</p>
+              <h3 class="t__22 d-flex align-items-center gap-3">
+                <span class="no">02</span><span>Execution</span>
+              </h3>
+              <p>
+                Our team implements the planned strategies across digital marketing, web development, design,
+                and SEO, ensuring a seamless and efficient process.
+              </p>
             </li>
             <li>
-              <h3 class="t__22 d-flex align-items-center gap-3"><span class="no">03</span><span>Strategy</span></h3>
-              <p>Based on the insights gathered, we develop a comprehensive SEO strategy is a tailored to your
-                business's unique needs and objectives.</p>
-            </li>
-            <li>
-              <h3 class="t__22 d-flex align-items-center gap-3"><span class="no">04</span><span>Strategy</span></h3>
-              <p>Based on the insights gathered, we develop a comprehensive SEO strategy is a tailored to your
-                business's unique needs and objectives.</p>
+              <h3 class="t__22 d-flex align-items-center gap-3">
+                <span class="no">03</span><span>Delivery</span>
+              </h3>
+              <p>
+                Upon completion and your approval, we finalize the project and deliver the
+                finished work, ready to help you achieve your digital goals.
+              </p>
             </li>
           </ul>
         </div> <!-- process list End-->
@@ -146,6 +155,9 @@ if (isset($_GET['service']) && $_GET['service'] != '') {
       </div>
     </div>
 
+    <div> <!-- shap start-->
+      <img src="assets/icons/dots.png" alt="" class="dots__shap">
+    </div> <!-- shap end-->
   </section>
   <!-- End Work Process -->
 

@@ -40,7 +40,7 @@
                         </li>
                         <li class="dropdown__container">
                             <div class="d-flex justify-content-between align-items-center gap-1">
-                                <a href="portfolio">Projects</a>
+                                <a href="portfolios">Projects</a>
                             </div>
                         </li>
                         <li class="dropdown__container">

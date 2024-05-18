@@ -8,6 +8,9 @@ $alt_text = "";
 $title = "";
 $desc = "";
 $seo_url = "";
+$meta_title = "";
+$meta_desc = "";
+$meta_keyword = "";
 
 
 if (isset($_GET['id']) && $_GET['id'] != "") {
@@ -23,6 +26,9 @@ if (isset($_GET['id']) && $_GET['id'] != "") {
         $title = $row['heading'];
         $desc = $row['description'];
         $seo_url = $row['seo_url'];
+        $meta_title = $row['meta_title'];
+        $meta_desc = $row['meta_desc'];
+        $meta_keyword = $row['meta_keyword'];
     }
 }
 
@@ -34,9 +40,13 @@ if (isset($_POST["addService"]) && $_POST["addService"] != '') {
     $img = get_safe_value($conn, rand(11, 999) . "-" . $_FILES['img']['name']);
     $alt_text = get_safe_value($conn, $_POST['alt-text']);
     $seo_url = get_safe_value($conn, $_POST['seo_url']);
+    $meta_title = get_safe_value($conn, $_POST['meta_title']);
+    $meta_desc = get_safe_value($conn, $_POST['meta_desc']);
+    $meta_keyword = get_safe_value($conn, $_POST['meta_keyword']);
+
     move_uploaded_file($_FILES["img"]["tmp_name"], "../assets/img/services/" . $img);
 
-    $sql = mysqli_query($conn, "INSERT INTO `services`(`img`,`alt`, `heading`, `description`,`seo_url`) VALUES ('$img','$alt_text','$title','$desc','$seo_url')");
+    $sql = mysqli_query($conn, "INSERT INTO `services`(`img`,`alt`, `heading`, `description`,`seo_url`,`meta_title`, `meta_desc`, `meta_keyword`) VALUES ('$img','$alt_text','$title','$desc','$seo_url','$meta_title','$meta_desc','$meta_keyword')");
 
     if ($sql) {
         header("Location: services");
@@ -50,6 +60,9 @@ if (isset($_POST["UpdateService"]) && $_POST["UpdateService"] != '') {
     $img = get_safe_value($conn, rand(11, 999) . "-" . $_FILES['img']['name']);
     $alt_text = get_safe_value($conn, $_POST['alt-text']);
     $seo_url = get_safe_value($conn, $_POST['seo_url']);
+    $meta_title = get_safe_value($conn, $_POST['meta_title']);
+    $meta_desc = get_safe_value($conn, $_POST['meta_desc']);
+    $meta_keyword = get_safe_value($conn, $_POST['meta_keyword']);
 
     $old_img = "";
     $sql_old_img = mysqli_query($conn, "SELECT `img` FROM `services` WHERE `id` = '$id'");
@@ -60,7 +73,7 @@ if (isset($_POST["UpdateService"]) && $_POST["UpdateService"] != '') {
 
     if (!empty($_FILES['img']['name'])) {
         move_uploaded_file($_FILES["img"]["tmp_name"], "../assets/img/services/" . $img);
-        $sql = mysqli_query($conn, "UPDATE `services` SET `img`='$img',`alt` = '$alt_text',`heading`='$title',`description`='$desc',`seo_url`= '$seo_url' WHERE `id` = '$id'");
+        $sql = mysqli_query($conn, "UPDATE `services` SET `img`='$img',`alt` = '$alt_text',`heading`='$title',`description`='$desc',`seo_url`= '$seo_url',`meta_title`='$meta_title',`meta_desc`='$meta_desc',`meta_keyword`='$meta_keyword' WHERE `id` = '$id'");
 
         if ($sql) {
             if (!empty($old_img) && file_exists("../assets/img/services/" . $old_img)) {
@@ -70,7 +83,7 @@ if (isset($_POST["UpdateService"]) && $_POST["UpdateService"] != '') {
             exit();
         }
     } else {
-        $sql = mysqli_query($conn, "UPDATE `services` SET `alt` = '$alt_text',`heading`='$title',`description`='$desc', `seo_url`='$seo_url' WHERE `id` = '$id'");
+        $sql = mysqli_query($conn, "UPDATE `services` SET `alt` = '$alt_text',`heading`='$title',`description`='$desc', `seo_url`='$seo_url',`meta_title`='$meta_title',`meta_desc`='$meta_desc',`meta_keyword`='$meta_keyword' WHERE `id` = '$id'");
 
         if ($sql) {
             header("Location: services");
@@ -184,6 +197,21 @@ if (isset($_POST["UpdateService"]) && $_POST["UpdateService"] != '') {
                                             <label class="form-label" for="service-icon-input">SEO URL</label>
                                             <input type="text" class="form-control" value="<?php echo $seo_url ?>"
                                                 id="service-icon-input" name="seo_url" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="service-icon-input">Meta Title</label>
+                                            <input type="text" class="form-control" value="<?php echo $meta_title ?>"
+                                                id="service-icon-input" name="meta_title">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="service-icon-input">Meta Description</label>
+                                            <input type="text" class="form-control" value="<?php echo $meta_desc ?>"
+                                                id="service-icon-input" name="meta_desc">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="service-icon-input">Meta Keyword</label>
+                                            <input type="text" class="form-control" value="<?php echo $meta_keyword ?>"
+                                                id="service-icon-input" name="meta_keyword" >
                                         </div>
 
                                     </div>

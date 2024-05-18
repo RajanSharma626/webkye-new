@@ -17,8 +17,8 @@ RewriteRule ^home$ /index.php [L]
 
 
 # Pass parameters in a clean way
-RewriteRule ^portfolio$ projects.php [L]
-RewriteRule ^portfolio/([^/]+)/?$ projects.php?page=$1 [L]
+RewriteRule ^portfolios$ projects.php [L]
+RewriteRule ^portfolio/([^/]+)/?$ project_details.php?project=$1 [L]
 
 RewriteRule ^blogs$ blog.php [L]
 RewriteRule ^blogs/([^/]+)/?$ blog.php?page=$1 [L]
@@ -26,7 +26,8 @@ RewriteRule ^blogs/([^/]+)/?$ blog.php?page=$1 [L]
 RewriteRule ^service/([^/]+)/?$ service_details.php?service=$1 [L]
 
 
-#RewriteRule ^create-cover-letter/([^/]+)/?$ create_cover.php?temp=$1 [L]
+RewriteRule ^blog-detail/([^/]+)/?$ blog_details.php?blog=$1 [L]
+
 #RewriteRule ^create-resume/([^/]+)/?$ create_resume.php?temp=$1 [L]
 
 #RewriteRule ^education-details/([^/]+)/([^/]+)/?$ education.php?temp=$1&id=$2 [L]

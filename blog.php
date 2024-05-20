@@ -43,10 +43,10 @@
               <h3 class="t__22"> <a href="#"><?php echo $row['title']; ?></a> </h3>
             </div>
             <img src="assets/img/blogs/<?php echo $row['cover']; ?>" alt="<?php echo $row['cover_alt_text'] ?>"
-              class="w-100">
+              class="w-100 img-fluid">
             <div class="card__footer">
               <p><?php echo $row['short_desc']; ?></p>
-              <div class="pt__35"> <a href="blog-detail/<?php echo $row['seo_url']; ?>" class=""> More Details <i
+              <div class="pt-2"> <a href="blog-detail/<?php echo $row['seo_url']; ?>" class=""> More Details <i
                     class="ti-arrow-top-right"></i></a></div>
             </div>
           </div> <!-- Card end -->

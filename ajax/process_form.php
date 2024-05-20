@@ -1,7 +1,7 @@
 <?php
 // Check if form data is received
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include ("../Includes/conn.php");
+    include ("../includes/conn.php");
 
     // Check connection
     if ($conn->connect_error) {
@@ -18,6 +18,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO contact_form (name, phone, email, subject, message) VALUES ('$name', '$phone', '$email', '$subject', '$message')";
     if ($conn->query($sql) === TRUE) {
         echo "success";
+
+        // Send email
+        // $to = "info.webkye@gmail.com"; // Replace with your email address
+        // $email_subject = "New Contact Form Submission: " . $subject;
+        // $email_body = "You have received a new message from the contact form on Webkye.\n\n" .
+        //     "Here are the details:\n" .
+        //     "Name: $name\n" .
+        //     "Phone: $phone\n" .
+        //     "Email: $email\n" .
+        //     "Subject: $subject\n" .
+        //     "Message:\n$message";
+        // $headers = "From: no-reply@example.com\n"; // Replace with a valid email address
+        // $headers .= "Reply-To: $email";
+
+        // mail($to, $email_subject, $email_body, $headers);
+
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

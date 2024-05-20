@@ -5,16 +5,16 @@
         <div class="container">
             <div class="d-flex align-items-center justify-content-between">
                 <div>
-                    <a href="index.html" class="d-flex align-items-center header__bottom_logo">
-                        <img src="assets/img/logo_black.png" alt="alt" />
-                        <h5>Webkye</h5>
+                    <a href="home" class="d-flex align-items-center header__bottom_logo">
+                        <img src="assets/img/logo_black.png" alt="alt" width="200px" />
+                        <!-- <h5>Webkye</h5> -->
                     </a>
                 </div>
                 <nav class="header__bottom_navbar">
                     <ul class="d-xl-flex menu__list">
                         <li class="dropdown__container">
                             <div class="d-flex justify-content-between align-items-center gap-1">
-                                <a href="/">Home</a>
+                                <a href="home">Home</a>
                             </div>
                         </li>
                         <li class="dropdown__container">
@@ -24,7 +24,7 @@
                         </li>
                         <li class="dropdown__container">
                             <div class="d-flex justify-content-between align-items-center gap-1">
-                                <a href="services.html">Services</a><i class="fa fa-angle-down"></i>
+                                <a href="services">Services</a><i class="fa fa-angle-down"></i>
                             </div>
                             <ul class="dropdown__container_menu">
                                 <?php
@@ -56,7 +56,7 @@
                     </ul>
                 </nav>
                 <div class="d-xl-block d-none">
-                    <a href="href.html" class="common__btn"><span>Get Started Now</span><i
+                    <a href="contact-us" class="common__btn"><span>Get Started Now</span><i
                             class="ti-arrow-top-right"></i></a>
                 </div>
                 <div class="menu__icon d-block d-xl-none">

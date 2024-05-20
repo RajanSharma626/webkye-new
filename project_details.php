@@ -78,10 +78,10 @@ if (isset($_GET['project']) && $_GET['project'] != '') {
           </div>
 
           <div class="pt__35 text-white">
-          <?php echo $projectDetail['long_desc'] ?>
+            <?php echo $projectDetail['long_desc'] ?>
           </div>
         </div>
-        <div class="second__para pt__35">
+        <!-- <div class="second__para pt__35">
           <h3 class="t__22">Optimizing Solution</h3>
           <ul>
             <li>
@@ -95,7 +95,7 @@ if (isset($_GET['project']) && $_GET['project'] != '') {
                 in-person assistance at physical locations.</p>
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
     <div> <!-- shap start-->
@@ -112,7 +112,7 @@ if (isset($_GET['project']) && $_GET['project'] != '') {
         <div> <!-- process title start-->
           <div class="title__area">
             <div class="transparent__btn">How It Work</div>
-            <h2 class="t__40 pt__30"> How Kulan Is Work Process For Our Marketing Customer</h2>
+            <h2 class="t__40 pt__30">How Our Work Process For Our Marketing Customer</h2>
           </div>
           <img src="assets/img/work_prc_bg.png" alt="" class="bg__img">
         </div> <!-- process title end-->
@@ -120,37 +120,122 @@ if (isset($_GET['project']) && $_GET['project'] != '') {
         <div> <!-- process list start-->
           <ul>
             <li>
-              <h3 class="t__22 d-flex align-items-center gap-3"><span class="no">01</span><span>Strategy</span></h3>
-              <p>Based on the insights gathered, we develop a comprehensive SEO strategy is a tailored to your
-                business's unique needs and objectives.</p>
-            </li>
-            <li>
-              <h3 class="t__22 d-flex align-items-center gap-3"><span class="no">02</span><span>Implementation</span>
+              <h3 class="t__22 d-flex align-items-center gap-3">
+                <span class="no">01</span><span>Planning </span>
               </h3>
-              <p>Based on the insights gathered, we develop a comprehensive SEO strategy is a tailored to your
-                business's unique needs and objectives.</p>
+              <p>
+                We start with a detailed discussion to understand your goals and requirements,
+                followed by crafting a customized plan tailored to your needs.
+              </p>
             </li>
             <li>
-              <h3 class="t__22 d-flex align-items-center gap-3"><span class="no">03</span><span>Analysis</span></h3>
-              <p>Based on the insights gathered, we develop a comprehensive SEO strategy is a tailored to your
-                business's unique needs and objectives.</p>
+              <h3 class="t__22 d-flex align-items-center gap-3">
+                <span class="no">02</span><span>Execution</span>
+              </h3>
+              <p>
+                Our team implements the planned strategies across digital marketing, web development, design,
+                and SEO, ensuring a seamless and efficient process.
+              </p>
             </li>
             <li>
-              <h3 class="t__22 d-flex align-items-center gap-3"><span class="no">04</span><span>Reporting</span></h3>
-              <p>Based on the insights gathered, we develop a comprehensive SEO strategy is a tailored to your
-                business's unique needs and objectives.</p>
+              <h3 class="t__22 d-flex align-items-center gap-3">
+                <span class="no">03</span><span>Delivery</span>
+              </h3>
+              <p>
+                Upon completion and your approval, we finalize the project and deliver the
+                finished work, ready to help you achieve your digital goals.
+              </p>
             </li>
           </ul>
         </div> <!-- process list End-->
+
       </div>
     </div>
 
     <div> <!-- shap start-->
       <img src="assets/icons/dots.png" alt="" class="dots__shap">
-
     </div> <!-- shap end-->
   </section>
   <!-- End Work Process -->
+
+  <!-- Address start -->
+  <div class="address py__130 pt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 com-md-6 mb-3 mb-sm-0">
+          <div class="add__card">
+            <div class="icon__box"> <i class="ti-comment-alt"></i> </div>
+            <div>
+              <p class="t__22">info.webkye@gmail.com</p>
+              <!-- <p class="t__22">helloinfo@gmail.com</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 com-md-6 mb-3 mb-sm-0">
+          <div class="add__card">
+            <div class="icon__box"> <i class="fa fa-map-marker"></i> </div>
+            <div>
+              <p class="t__22">New Delhi, India</p>
+              <!-- <p class="t__22">New York, NY 101010</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 com-md-6 mb-3 mb-sm-0">
+          <div class="add__card">
+            <div class="icon__box"> <i class="fa fa-whatsapp"></i> </div>
+            <div>
+              <p class="t__22">+91 8468027626</p>
+              <!-- <p class="t__22">+34 9433 04323</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Address end -->
+
+  <!-- Contact Start -->
+  <section class="contact  py__130 pt-0">
+    <div class="container">
+      <div class="text-center">
+        <p class="transparent__btn">Contact Us</p>
+        <h2 class="t__40 pt__30">Get in Touch</h2>
+      </div>
+      <div class="contact__form pt__40" id="contact-form">
+        <form>
+          <div class="row">
+            <div class="col-md-6"> <input type="text" name="name" id="name" placeholder="Your Name" required> </div>
+            <div class="col-md-6"> <input type="email" name="email" id="email" placeholder="Your Email" required> </div>
+            <div class="col-md-6 mb-3 mb-sm-0">
+              <select name="subject" id="subject" class="py-2 h-100" required>
+                <option value="" selected disabled>I'm Looking for...</option>
+                <option value="Web development">Web development</option>
+                <option value="UI/UX">UI/UX</option>
+                <option value="Search Engine Optimization (SEO)">Search Engine Optimization (SEO)</option>
+                <option value="Graphic Designing">Graphic Designing</option>
+                <option value="Video Editing">Video Editing</option>
+                <option value="Content Writing">Content Writing</option>
+                <option value="Email Marketing">Email Marketing</option>
+                <option value="Social Media Marketing">Social Media Marketing</option>
+                <option value="Social Media Optimization">Social Media Optimization</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="col-md-6"> <input type="number" name="phone" id="phone" placeholder="Your Phone" required>
+            </div>
+            <div class="col-12"> <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="d-flex justify-content-center">
+              <button type="submit" name="submit" class="common__btn"> <span>Send Message </span> <i
+                  class="ti-arrow-top-right"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- Contact end -->
 
   <!--  start Footer -->
   <?php include ("includes/footer.php") ?>

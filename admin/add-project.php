@@ -123,7 +123,7 @@ if (isset($_POST["UpdateProject"]) && $_POST["UpdateProject"] != '') {
          `alt_text`='$cover_alt_text',
          `banner`='$banner',
          `banner_alt_text`='$banner_alt_text',
-         `date`='$$date',
+         `date`='$date',
          `location`='$location',
          `seo_url`='$seo_url',
          `meta_title` ='$meta_title',
@@ -150,7 +150,7 @@ if (isset($_POST["UpdateProject"]) && $_POST["UpdateProject"] != '') {
          `alt_text`='$cover_alt_text',
          `banner`='$banner',
          `banner_alt_text`='$banner_alt_text',
-         `date`='$$date',
+         `date`='$date',
          `location`='$location',
          `seo_url`='$seo_url',
          `meta_title` ='$meta_title',
@@ -176,7 +176,7 @@ if (isset($_POST["UpdateProject"]) && $_POST["UpdateProject"] != '') {
          `cover`='$cover',
          `alt_text`='$cover_alt_text',
          `banner_alt_text`='$banner_alt_text',
-         `date`='$$date',
+         `date`='$date',
          `location`='$location',
          `seo_url`='$seo_url',
          `meta_title` ='$meta_title',
@@ -199,7 +199,7 @@ if (isset($_POST["UpdateProject"]) && $_POST["UpdateProject"] != '') {
          `cat`='$cat',
          `alt_text`='$cover_alt_text',
          `banner_alt_text`='$banner_alt_text',
-         `date`='$$date',
+         `date`='$date',
          `location`='$location',
          `seo_url`='$seo_url',
          `meta_title` ='$meta_title',
@@ -329,12 +329,12 @@ if (isset($_POST["UpdateProject"]) && $_POST["UpdateProject"] != '') {
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Short Description</label>
-                                            <textarea name="short_desc" placeholder="Write a short description..."
+                                            <textarea name="short_desc"  placeholder="Write a short description..."
                                                 class="form-control" required><?php echo $short_desc ?></textarea>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Description</label>
-                                            <textarea name="desc" placeholder="Write a description..."
+                                            <textarea name="desc" id="ckeditor" placeholder="Write a description..."
                                                 class="form-control" required><?php echo $desc ?></textarea>
                                         </div>
                                         <div class="mb-3">
@@ -484,6 +484,14 @@ if (isset($_POST["UpdateProject"]) && $_POST["UpdateProject"] != '') {
                 $(this).closest('.remove-div').remove();
             });
         });
+    </script>
+
+<script>
+        ClassicEditor
+            .create(document.querySelector('#ckeditor'))
+            .catch(error => {
+                console.error(error);
+            });
     </script>
 </body>
 

@@ -1864,7 +1864,7 @@ p {
 
 .blogs .blg__card img {
     border-radius: 8px;
-    max-height: 251px;
+    max-height: 230px;
     height: 100%;
     object-fit: cover
 }
@@ -2539,7 +2539,13 @@ p {
     position: relative
 }
 
+.contact .contact__form select option {
+    background: #142220;
+    color: #fff;
+}
+
 .contact .contact__form input,
+.contact .contact__form select,
 .contact .contact__form textarea {
     width: 100%;
     border-radius: 8px;
@@ -2555,6 +2561,7 @@ p {
 @media(max-width: 768px) {
 
     .contact .contact__form input,
+    .contact .contact__form select,
     .contact .contact__form textarea {
         padding: 19px 17px
     }

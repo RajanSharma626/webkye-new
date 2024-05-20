@@ -1,30 +1,14 @@
 <?php
 include ("includes/conn.php");
-
-if (isset($_GET['service']) && $_GET['service'] != '') {
-  $serviceUrl = mysqli_real_escape_string($conn, $_GET['service']);
-  $sqlcheck = mysqli_query($conn, "SELECT * FROM `services` WHERE `seo_url` = '$serviceUrl'");
-  if (mysqli_num_rows($sqlcheck) > 0) {
-    $serviceDetail = mysqli_fetch_assoc($sqlcheck);
-  } else {
-    header("Location: /services");
-    die();
-  }
-
-} else {
-  header("Location: /services");
-  die();
-}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <?php include ("includes/head.php") ?>
-  <title><?php echo $serviceDetail['meta_title'] ?> | Webkye</title>
-  <meta name="description" content="<?php echo $serviceDetail['meta_desc'] ?>">
-  <meta name="keywords" content="<?php echo $serviceDetail['meta_keyword'] ?>">
+  <title>Services | Webkye</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
 </head>
 
 <body>
@@ -32,81 +16,49 @@ if (isset($_GET['service']) && $_GET['service'] != '') {
   <?php include ("includes/navbar.php") ?>
   <!--  End Header  -->
 
-  <!--  start service details -->
+  <!--  Start Services 1 -->
+  <section class="services_1 pt-5" id="services">
+    <div class="container position-relative">
+      <!-- Title start -->
+      <div class="text-center title__area">
+        <p class="transparent__btn">Our Services</p>
+        <h2 class="t__40 pt__30"> What Services We Provide For Your Business </h2>
+      </div>
+      <!-- Title end -->
+      <div class="wapper mt__50">
+        <?php
+        $services = mysqli_query($conn, "SELECT * FROM `services`");
+        $sno = 1;
+        while ($row = mysqli_fetch_assoc($services)) {
+          ?>
+          <div class="sr__card">
+            <!-- Card start-->
+            <img src="assets/img/services/<?php echo $row['img'] ?>" alt="<?php echo $row['alt'] ?>" />
+            <div class="card__footer">
+              <h5 class="t__22 no">0<?php echo $sno ?></h5>
+              <h3 class="t__22"><?php echo $row['heading'] ?></h3>
+              <div class="invisible__content">
+                <p>
+                  <?php echo $row['description'] ?>
+                </p>
+                <a href="service/<?php echo $row['seo_url'] ?>" class="d-flex align-items-center">
+                  More Details <i class="ti-arrow-top-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- Card End-->
+          <?php $sno++;
+        } ?>
 
-  <section class="service__details pt__130">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 order-lg-0 order-1 mt-4 mt-lg-0"> <!-- side bar start -->
-          <div class="ser__sidebar">
-            <div class="more__service">
-              <h3 class="t__22">More Services</h3>
-              <ul>
-                <?php
-                $servicesList = mysqli_query($conn, "SELECT * FROM `services`");
-                $sno = 1;
-                while ($row = mysqli_fetch_assoc($servicesList)) {
-                  if ($row['seo_url'] != $_GET['service']) {
-                    ?>
-                    <li><a href="service/<?php echo $row['seo_url'] ?>"><?php echo $row['heading'] ?></a></li>
-                  <?php }
-                } ?>
-              </ul>
-            </div>
-            <div class="help">
-              <h3 class="t__22">Need Your Help?</h3>
-              <ul>
-                <li> <i class="ti-comment-alt"></i>
-                  <p>info.webkye@gmail.com</p>
-                </li>
-                <li> <i class="fa fa-whatsapp"></i>
-                  <p>+91 8468027626</p>
-                </li>
-                <li> <i class="fa fa-map-marker"></i>
-                  <p>New Delhi, India</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div> <!-- side bar end -->
-        <div class="col-lg-9"> <!-- service article start -->
-          <img src="assets/img/services/<?php echo $serviceDetail['img'] ?>" alt="" class="w-100 thumb__img">
-          <div class="first__para pt__60">
-            <p class="transparent__btn pt__40">Service Details</p>
-            <h2 class="t__40 pt__30" data-aos="fade-up" data-aos-delay="100" data-aos-offset="0"
-              data-aos-duration="1000">
-              <?php echo $serviceDetail['heading'] ?>
-            </h2>
-            <div class="pt__35 text-light">
-              <?php echo $serviceDetail['detail'] ?>
-            </div>
-          </div>
-          <div class="second__para pt__60">
-            <div class="d-flex justify-content-between">
-              <div>
-                <div class="d-flex align-items-center gap-3 mb-3">
-                  <div class="icon__box"><img src="assets/img/about/doller.png" alt="alt"></div>
-                  <h5 class="t__22">Experience and Expertise</h5>
-                </div>
-              </div>
-              <div class="">
-                <div class="d-flex align-items-center gap-3 mb-3">
-                  <div class="icon__box"><img src="assets/img/about/profile.png" alt="alt"> </div>
-                  <h5 class="t__22">Customized Solutions</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> <!-- service article end -->
       </div>
     </div>
-    <div> <!-- shap start-->
-      <img src="assets/icons/dots.png" alt="" class="dots__shap">
-      <img src="assets/icons/rat_agal.png" alt="" class="rat__shap">
-    </div> <!-- shap end-->
-  </section>
-  <!--  End service details -->
 
+    <div> <!-- shap start -->
+      <img src="assets/icons/dots.png" alt="" class="dots__shap">
+
+    </div> <!-- shap end -->
+  </section>
+  <!--  End Services 1 -->
 
   <!-- Start Work Process -->
   <section class="work_process work_process_3  py__130">
@@ -161,8 +113,93 @@ if (isset($_GET['service']) && $_GET['service'] != '') {
   </section>
   <!-- End Work Process -->
 
+  <!-- partner start -->
+  <div class="container pb__130">
+    <div class="partner">
+      <div>
+        <div class="  partner__wapper">
+          <div class="partner__content">
+            <div class="slide"><img src="assets/img/about/cmp1.svg" alt="alt" class="partner__logo"></div>
+            <div class="slide"><img src="assets/img/about/cmp2.svg" alt="alt" class="partner__logo"></div>
+            <div class="slide"><img src="assets/img/about/cmp3.svg" alt="alt" class="partner__logo"></div>
+            <div class="slide"><img src="assets/img/about/cmp4.svg" alt="alt" class="partner__logo"></div>
+            <div class="slide"><img src="assets/img/about/cmp5.svg" alt="alt" class="partner__logo"></div>
+            <div class="slide"><img src="assets/img/about/cmp1.svg" alt="alt" class="partner__logo"></div>
+            <div class="slide"><img src="assets/img/about/cmp2.svg" alt="alt" class="partner__logo"></div>
+            <div class="slide"><img src="assets/img/about/cmp3.svg" alt="alt" class="partner__logo"></div>
+            <div class="slide"><img src="assets/img/about/cmp4.svg" alt="alt" class="partner__logo"></div>
+            <div class="slide"><img src="assets/img/about/cmp5.svg" alt="alt" class="partner__logo"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- partner End -->
+
+  <!--  Start Testimonial -->
+  <section class="testimonial py__130">
+    <div class="container position-relative">
+      <div class="slider">
+
+        <div class="testimonial__slides">
+          <?php
+          $testimonial = mysqli_query($conn, "SELECT * FROM `testimonials` ORDER BY `timestamp` DESC");
+
+          while ($row = mysqli_fetch_assoc($testimonial)) {
+            ?>
+            <div>
+              <!-- slide 1 start -->
+              <div class="ku__slide">
+                <div class="content">
+                  <div class="quote">
+                    <img src="assets/img/review/quote.png" alt="" />
+                  </div>
+
+                  <p class="review">
+                    <?php echo $row['comment'] ?>
+                  </p>
+
+                  <div class="user">
+                    <img src="assets/img/review/<?php echo $row['profile'] ?>" alt="" />
+                    <div>
+                      <h5 class="t__22 mb-0"><?php echo $row['name'] ?></h5>
+                      <p class="d-flex align-items-center"><img src="assets/img/review/<?php echo $row['country'] ?>"
+                          alt="country_flag" class="avatar-sm " style="width: 20px;height: 15px; border-radius: 0;">&nbsp;
+                        <?php echo $row['country_name'] ?>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="rating">
+                    <div class="d-flex align-items-center gap-2">
+                      <p>Supper</p>
+                      <img src="assets/img/review/rating.png" alt="" />
+                    </div>
+                    <div>
+                      <img src="assets/img/review/comp_logo.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slider-nav slider-nav-1">
+                <img src="assets/img/review/user.png" alt="" />
+              </div>
+            </div>
+            <!-- slide 1 end -->
+          <?php } ?>
+        </div>
+      </div>
+    </div>
+    <div> <!-- shap start -->
+      <img src="assets/icons/rat_agal.png" alt="" class="rat__shap">
+      <img src="assets/icons/dots_x.png" alt="" class="dots__shap">
+      <img src="assets/icons/sun_white.png" alt="" class="sun__shap">
+    </div> <!-- shap End -->
+  </section>
+  <!--  End Testimonial -->
+
   <!-- Address start -->
-  <div class="address py__130">
+  <div class="address py__130 pt-5">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 com-md-6 mb-3 mb-sm-0">
@@ -198,7 +235,7 @@ if (isset($_GET['service']) && $_GET['service'] != '') {
   <!-- Address end -->
 
   <!-- Contact Start -->
-  <section class="contact  py__130 pt-0">
+  <section class="contact  pt-0 py__130">
     <div class="container">
       <div class="text-center">
         <p class="transparent__btn">Contact Us</p>
@@ -240,6 +277,7 @@ if (isset($_GET['service']) && $_GET['service'] != '') {
   </section>
   <!-- Contact end -->
 
+
   <!--  start Footer -->
   <?php include ("includes/footer.php") ?>
   <!--  End Footer -->
@@ -247,7 +285,6 @@ if (isset($_GET['service']) && $_GET['service'] != '') {
   <!--  start Footer -->
   <?php include ("includes/foot.php") ?>
   <!--  End Footer -->
-
 </body>
 
 </html>

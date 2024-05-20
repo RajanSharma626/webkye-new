@@ -31,9 +31,9 @@
                 Power to Reach Your Audience with Precision and Impact Like Never Before.
               </p>
             </div>
-            <button class="common__btn buttons_file">
+            <a href="contact-us" class="common__btn buttons_file">
               <span>Get Started </span> <i class="ti-arrow-top-right"></i>
-            </button>
+            </a>
           </div>
         </div>
         <div class="col-xl-5">
@@ -108,7 +108,7 @@
               <div class="pt__40">
                 <a href="href.html" class="common__btn"><i class="bi bi-play-circle"></i> &nbsp;<span>Watch
                     Now</span></a>
-                <a href="href.html" class="common__btn"><span>More About Us</span><i class="ti-arrow-top-right"></i></a>
+                <a href="about-us" class="common__btn"><span>More About Us</span><i class="ti-arrow-top-right"></i></a>
               </div>
             </div>
             <!-- Info end-->
@@ -200,7 +200,7 @@
                 <p>
                   <?php echo $row['description'] ?>
                 </p>
-                <a href="#" class="d-flex align-items-center">
+                <a href="service/<?php echo $row['seo_url'] ?>" class="d-flex align-items-center">
                   More Details <i class="ti-arrow-top-right"></i></a>
               </div>
             </div>
@@ -536,6 +536,85 @@
   </section>
   <!--  End Testimonial -->
 
+  <!-- Address start -->
+  <div class="address py__130">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 com-md-6 mb-3 mb-sm-0">
+          <div class="add__card">
+            <div class="icon__box"> <i class="ti-comment-alt"></i> </div>
+            <div>
+              <p class="t__22">info.webkye@gmail.com</p>
+              <!-- <p class="t__22">helloinfo@gmail.com</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 com-md-6 mb-3 mb-sm-0">
+          <div class="add__card">
+            <div class="icon__box"> <i class="fa fa-map-marker"></i> </div>
+            <div>
+              <p class="t__22">New Delhi, India</p>
+              <!-- <p class="t__22">New York, NY 101010</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 com-md-6 mb-3 mb-sm-0">
+          <div class="add__card">
+            <div class="icon__box"> <i class="fa fa-whatsapp"></i> </div>
+            <div>
+              <p class="t__22">+91 8468027626</p>
+              <!-- <p class="t__22">+34 9433 04323</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Address end -->
+
+  <!-- Contact Start -->
+  <section class="contact  ">
+    <div class="container">
+      <div class="text-center">
+        <p class="transparent__btn">Contact Us</p>
+        <h2 class="t__40 pt__30">Get in Touch</h2>
+      </div>
+      <div class="contact__form pt__40" id="contact-form">
+        <form>
+          <div class="row">
+            <div class="col-md-6"> <input type="text" name="name" id="name" placeholder="Your Name" required> </div>
+            <div class="col-md-6"> <input type="email" name="email" id="email" placeholder="Your Email" required> </div>
+            <div class="col-md-6 mb-3 mb-sm-0">
+              <select name="subject" id="subject" class="py-2 h-100" required>
+                <option value="" selected disabled>I'm Looking for...</option>
+                <option value="Web development">Web development</option>
+                <option value="UI/UX">UI/UX</option>
+                <option value="Search Engine Optimization (SEO)">Search Engine Optimization (SEO)</option>
+                <option value="Graphic Designing">Graphic Designing</option>
+                <option value="Video Editing">Video Editing</option>
+                <option value="Content Writing">Content Writing</option>
+                <option value="Email Marketing">Email Marketing</option>
+                <option value="Social Media Marketing">Social Media Marketing</option>
+                <option value="Social Media Optimization">Social Media Optimization</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="col-md-6"> <input type="number" name="phone" id="phone" placeholder="Your Phone" required>
+            </div>
+            <div class="col-12"> <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="d-flex justify-content-center">
+              <button type="submit" name="submit" class="common__btn"> <span>Send Message </span> <i
+                  class="ti-arrow-top-right"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- Contact end -->
+
   <!--  Start Blog -->
   <section class="blogs py__130" id="blogs">
     <div class="container">
@@ -548,7 +627,7 @@
           </h2>
         </div>
         <div class="mt-4 mt-lg-0">
-          <a href="#" class="common__btn_yellow">
+          <a href="blogs" class="common__btn_yellow">
             Read All <i class="ti-arrow-top-right"></i></a>
         </div>
       </div>
@@ -574,7 +653,7 @@
                 ?></li>
               </ul>
               <h3 class="t__22">
-                <a href="#"><?php echo $row['short_desc'] ?></a>
+                <a href="blog/<?php echo $row['seo_url'] ?>"><?php echo $row['short_desc'] ?></a>
               </h3>
             </div>
             <img src="assets/img/blogs/<?php echo $row['cover'] ?>" alt="<?php echo $row['cover_alt_text'] ?>"

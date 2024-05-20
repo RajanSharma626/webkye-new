@@ -85,11 +85,11 @@ if (isset($_POST["UpdateProject"]) && $_POST["UpdateProject"] != '') {
         move_uploaded_file($_FILES["banner"]["tmp_name"], "../assets/img/blogs/" . $banner);
 
         $sql = mysqli_query($conn, "UPDATE `blogs` SET `title`='$title',
-        `short_desc`='[value-4]',
-        `blog`='$short_desc',
+        `short_desc`='$short_desc',
+        `blog`='$blog',
         `banner`='$banner',
         `banner_alt_text`='$banner_alt_text',
-        `cover`='$cover]',
+        `cover`='$cover',
         `cover_alt_text`='$cover_alt_text',
         `seo_url`='$seo_url',
         `meta_desc`='$meta_desc',
@@ -104,8 +104,8 @@ if (isset($_POST["UpdateProject"]) && $_POST["UpdateProject"] != '') {
         move_uploaded_file($_FILES["cover"]["tmp_name"], "../assets/img/blogs/" . $cover);
 
         $sql = mysqli_query($conn, "UPDATE `blogs` SET `title`='$title',
-        `short_desc`='[value-4]',
-        `blog`='$short_desc',
+        `short_desc`='$short_desc',
+        `blog`='$blog',
         `banner_alt_text`='$banner_alt_text',
         `cover`='$cover]',
         `cover_alt_text`='$cover_alt_text',
@@ -122,8 +122,8 @@ if (isset($_POST["UpdateProject"]) && $_POST["UpdateProject"] != '') {
         move_uploaded_file($_FILES["banner"]["tmp_name"], "../assets/img/blogs/" . $banner);
 
         $sql = mysqli_query($conn, "UPDATE `blogs` SET `title`='$title',
-        `short_desc`='[value-4]',
-        `blog`='$short_desc',
+        `short_desc`='$short_desc',
+        `blog`='$blog',
         `banner`='$banner',
         `banner_alt_text`='$banner_alt_text',
         `cover_alt_text`='$cover_alt_text',
@@ -138,8 +138,8 @@ if (isset($_POST["UpdateProject"]) && $_POST["UpdateProject"] != '') {
     } else {
 
         $sql = mysqli_query($conn, "UPDATE `blogs` SET `title`='$title',
-        `short_desc`='[value-4]',
-        `blog`='$short_desc',
+        `short_desc`='$short_desc',
+        `blog`='$blog',
         `banner_alt_text`='$banner_alt_text',
         `cover_alt_text`='$cover_alt_text',
         `seo_url`='$seo_url',

@@ -4,9 +4,9 @@
         <div class="row">
             <div class="col-12 footer__lo_co">
                 <div class="d-flex justify-content-center">
-                    <a href="href.html" class="d-flex align-items-center gap-2 footer__logo">
-                        <img src="assets/img/logo.png" alt="alt" />
-                        <h5>Webkye</h5>
+                    <a href="home" class="d-flex align-items-center gap-2 footer__logo">
+                        <img src="assets/img/logo.png" class="img-fluid" alt="alt" width="200px" />
+                        <!-- <h5>Webkye</h5> -->
                     </a>
                 </div>
                 <span class="border__full"></span>
@@ -70,7 +70,7 @@
                     <ul class="footer__info_contact">
                         <li>
                             <i class="ti-comment-alt"></i>
-                            <p>info@webkye.in</p>
+                            <p>info.webkye@gmail.com</p>
                         </li>
                         <li>
                             <i class="fa fa-whatsapp"></i>
@@ -110,7 +110,7 @@
                 <hr class="footer__border" />
                 <p class="text-center">
                     © Copyright 2024 All Rights Reserved by
-                    <a href="href.html">Webkye</a>
+                    <a href="home">Webkye</a>
                 </p>
             </div>
         </div>

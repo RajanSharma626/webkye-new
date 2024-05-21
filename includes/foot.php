@@ -80,6 +80,77 @@
                 }
             });
         });
+
+
+        $('#subscribe-form').submit(function (e) {
+            e.preventDefault();
+            $('#subscribe-btn').attr("disabled", true).addClass('disabled-btn');
+
+            var email = $('#newletter').val(); // Ensure the correct input field ID is used
+            // Validate email format
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                // Show error message with SweetAlert2
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Invalid Email',
+                    text: 'Please enter a valid email address.',
+                });
+                $('#subscribe-btn').removeAttr("disabled").removeClass('disabled-btn');
+                return; // Exit the function to prevent form submission
+            }
+
+            var formData = { email: email };
+
+            $.ajax({
+                type: 'POST',
+                url: 'ajax/subscribe_form.php',
+                data: formData,
+                success: function (response) {
+                    if (response == 'success') {
+                        // Show enhanced success message with SweetAlert2
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Subscription Successful! 🎉',
+                            html: '<h4>Thank you for subscribing to our newsletter!</h4>',
+                            confirmButtonText: 'Great!',
+                            customClass: {
+                                title: 'swal-title',
+                                htmlContainer: 'swal-html',
+                                confirmButton: 'swal-confirm-button'
+                            }
+                        });
+                        $('#subscribe-form')[0].reset(); // Reset the form
+                    } else if (response == 'exists') {
+                        // Show email already exists message
+                        Swal.fire({
+                            icon: 'info',
+                            title: 'Already Subscribed',
+                            text: 'This email is already subscribed to our newsletter.',
+                        });
+                    } else {
+                        // Show error message with SweetAlert2
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error!',
+                            text: 'Form submission failed. Please try again.',
+                        });
+                    }
+                    $('#subscribe-btn').removeAttr("disabled").removeClass('disabled-btn');
+                },
+                error: function (xhr, status, error) {
+                    console.error(xhr.responseText);
+                    // Show error message with SweetAlert2
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error!',
+                        text: 'An error occurred while processing your request. Please try again later.',
+                    });
+                    $('#subscribe-btn').removeAttr("disabled").removeClass('disabled-btn');
+                }
+            });
+        });
     });
+
 
 </script>

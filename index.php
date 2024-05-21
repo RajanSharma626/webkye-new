@@ -493,7 +493,7 @@
                   </p>
 
                   <div class="user">
-                    <img src="assets/img/review/<?php echo $row['profile'] ?>" alt="" />
+                    <img src="assets/img/review/<?php echo $row['profile'] ?>" alt="Client profile" />
                     <div>
                       <h5 class="t__22 mb-0"><?php echo $row['name'] ?></h5>
                       <p class="d-flex align-items-center"><img src="assets/img/review/<?php echo $row['country'] ?>"
@@ -505,7 +505,7 @@
 
                   <div class="rating">
                     <div class="d-flex align-items-center gap-2">
-                      <p>Supper</p>
+                      <p>Rating</p>
                       <img src="assets/img/review/rating.png" alt="" />
                     </div>
                     <div>
@@ -513,9 +513,6 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="slider-nav slider-nav-1">
-                <img src="assets/img/review/user.png" alt="" />
               </div>
             </div>
             <!-- slide 1 end -->

@@ -45,10 +45,12 @@
                         Digital marketing agencies run paid advertising campaigns for
                         themselves.
                     </p>
-                    <input type="email" placeholder="Enter your email" />
-                    <button class="common__btn">
-                        Subscribe Now <i class="ti-arrow-top-right"></i>
-                    </button>
+                    <form id="subscribe-form" >
+                        <input type="email" placeholder="Enter your email" id="newletter" required />
+                        <button class="common__btn" id="subscribe-btn">
+                            Subscribe Now <i class="ti-arrow-top-right"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
             <div class="box">
@@ -96,10 +98,11 @@
                 <div>
                     <h3 class="footer__info_group t__22">Our Services</h3>
                     <ul>
-                        <li><a href="href.html">Marketing Strategy</a></li>
-                        <li><a href="href.html">Search Engine Optimization(SEO)</a></li>
-                        <li><a href="href.html">Web development</a></li>
-                        <li><a href="href.html">View More</a></li>
+                        <li><a href="service/digital-marketing-service">Marketing Strategy</a></li>
+                        <li><a href="service/search-engine-optimization-seo-service">Search Engine Optimization(SEO)</a>
+                        </li>
+                        <li><a href="web-design-or-development-service">Web development</a></li>
+                        <li><a href="services">View More</a></li>
                     </ul>
                 </div>
             </div>

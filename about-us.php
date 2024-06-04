@@ -354,7 +354,6 @@
   <section class="testimonial py__130">
     <div class="container position-relative">
       <div class="slider">
-
         <div class="testimonial__slides">
           <?php
           $testimonial = mysqli_query($conn, "SELECT * FROM `testimonials` ORDER BY `timestamp` DESC");
@@ -374,7 +373,7 @@
                   </p>
 
                   <div class="user">
-                    <img src="assets/img/review/<?php echo $row['profile'] ?>" alt="" />
+                    <img src="assets/img/review/<?php echo $row['profile'] ?>" alt="Client profile" />
                     <div>
                       <h5 class="t__22 mb-0"><?php echo $row['name'] ?></h5>
                       <p class="d-flex align-items-center"><img src="assets/img/review/<?php echo $row['country'] ?>"
@@ -386,7 +385,7 @@
 
                   <div class="rating">
                     <div class="d-flex align-items-center gap-2">
-                      <p>Supper</p>
+                      <p>Rating</p>
                       <img src="assets/img/review/rating.png" alt="" />
                     </div>
                     <div>
@@ -395,9 +394,6 @@
                   </div>
                 </div>
               </div>
-              <div class="slider-nav slider-nav-1">
-                <img src="assets/img/review/user.png" alt="" />
-              </div>
             </div>
             <!-- slide 1 end -->
           <?php } ?>
@@ -405,11 +401,15 @@
       </div>
     </div>
 
-    <div> <!-- shap start -->
-      <img src="assets/icons/rat_agal.png" alt="" class="rat__shap">
-      <img src="assets/icons/dots_x.png" alt="" class="dots__shap">
-      <img src="assets/icons/sun_white.png" alt="" class="sun__shap">
-    </div> <!-- shap End -->
+    <div>
+      <!-- shap start -->
+      <img src="assets/icons/rat_agal.png" alt="" class="rat__shap d-none d-xl-block" />
+      <img src="assets/icons/dots_x.png" alt="" class="dots__shap" data-aos="fade-up" data-aos-delay="100"
+        data-aos-offset="0" data-aos-duration="1000" />
+      <img src="assets/icons/sun_white.png" alt="" class="sun__shap" data-aos="fade-down" data-aos-delay="100"
+        data-aos-offset="0" data-aos-duration="1000" />
+    </div>
+    <!-- shap End -->
   </section>
   <!--  End Testimonial -->
 

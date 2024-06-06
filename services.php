@@ -6,9 +6,11 @@ include ("includes/conn.php");
 
 <head>
   <?php include ("includes/head.php") ?>
-  <title>Services | Webkye</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Our Services | Webkye Digital Marketing Agency</title>
+  <meta name="description"
+    content="Explore our top-notch digital marketing services in Delhi NCR: SEO, web development, UI/UX design, graphic design, video editing, and social media marketing. Elevate your brand today!">
+  <meta name="keywords" content="digital marketing, Delhi NCR, SEO, web development, UI/UX design, graphic design, video editing, social media marketing.">
+  <link rel="canonical" href="https://webkye.in/services">
 </head>
 
 <body>

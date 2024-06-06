@@ -5,9 +5,11 @@
 
 <head>
   <?php include ("includes/head.php") ?>
-  <title>Our Portfolio | Webkye</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Our Portfolio | Webkye Digital Marketing Agency</title>
+  <meta name="description"
+    content="Discover Webkye's digital portfolio: SEO, web dev, UI/UX, graphic design, video editing, social media. Elevate your brand online!">
+  <meta name="keywords" content="Webkye, digital marketing, portfolio, SEO, web development, UI/UX design, graphic design, video editing, social media marketing, brand elevation.">
+  <link rel="canonical" href="https://webkye.in/portfolios">
 </head>
 
 <body>
@@ -20,7 +22,7 @@
   <section class="projects_1 all_projects overflow-hidden py__130">
     <div class="container">
       <div class="title__area"> <!-- Title start-->
-        <div class="transparent__btn">View Our Latest Project</div>
+        <h1 class="fs-5 transparent__btn">View Our Latest Project</h1>
         <h2 class="t__40 pt__30"> Our Latest Work</h2>
       </div> <!-- Title end-->
 

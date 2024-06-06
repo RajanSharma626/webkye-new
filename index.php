@@ -7,7 +7,10 @@
   <?php include ("includes/head.php") ?>
   <title>Webkye | Top Digital Marketing Agency in Delhi NCR, India</title>
   <meta name="description"
-    content="Unlock the full potential of your brand online with Webkye, Delhi NCR's leading digital marketing experts. From SEO and web development to UI/UX design, graphic design, video editing, and social media marketing, trust us to elevate your online presence.">
+    content="Unlock your brand's potential with Webkye, Delhi NCR's top digital marketing experts. SEO, web development, UI/UX, graphic design, video editing, social media marketing.">
+  <meta name="keywords"
+    content="digital marketing, Delhi NCR, SEO, web development, UI/UX design, graphic design, video editing, social media marketing, online presence, brand elevation.">
+  <link rel="canonical" href="https://webkye.in/home">
 </head>
 
 <body>
@@ -22,10 +25,10 @@
         <div class="col-xl-7">
           <div class="banner__content">
             <div class="banner__content_title">
-              <h5>Digital Marketing Agency</h5>
-              <h3 data-aos="fade-up" data-aos-delay="100" data-aos-offset="0" data-aos-duration="1000">
+              <h1 class="fs-5">Webkye Digital Marketing Agency</h1>
+              <h2 data-aos="fade-up" data-aos-delay="100" data-aos-offset="0" data-aos-duration="1000">
                 Grow Your Business Digitally.
-              </h3>
+              </h2>
               <p class="mt-0" data-aos="fade-up" data-aos-delay="200" data-aos-offset="0" data-aos-duration="1000">
                 Transform Your Brand's Visibility and Engagement with the Mastery of Digital Marketing! Harness the
                 Power to Reach Your Audience with Precision and Impact Like Never Before.
@@ -84,7 +87,7 @@
                   <div class="icon__box">
                     <img src="assets/img/about/doller.png" alt="alt" />
                   </div>
-                  <h5 class="t__22">Experience and Expertise</h5>
+                  <h3 class="t__22 fs-5">Experience and Expertise</h3>
                 </div>
                 <!-- <p>
                     Digital marketing agencies often run paid advertising
@@ -97,7 +100,7 @@
                   <div class="icon__box">
                     <img src="assets/img/about/profile.png" alt="alt" />
                   </div>
-                  <h5 class="t__22">Customized Solutions</h5>
+                  <h3 class="t__22 fs-5">Customized Solutions</h3>
                 </div>
                 <!-- <p>
                     Digital marketing agencies often run paid advertising
@@ -227,28 +230,28 @@
     <div class="container">
       <div class="counter__wapper">
         <div class="counter__box">
-          <h1 class="t__40">
+          <h5 class="t__40 fs-1">
             <span class="counter__number" data-count="5"></span>+
-          </h1>
+          </h5>
           <p class="counter__text">Years Of Experience</p>
         </div>
         <div class="counter__box">
-          <h1 class="t__40">
+          <h5 class="t__40 fs-1">
             <span class="counter__number" data-count="108"></span>+
-          </h1>
+          </h5>
           <p class="counter__text">Completed Project</p>
         </div>
         <div class="counter__box">
-          <h1 class="t__40">
+          <h5 class="t__40 fs-1">
             <span class="counter__number" data-count="98.09"></span>%
-          </h1>
+          </h5>
           <p class="counter__text">Customer Satisfied</p>
         </div>
 
         <div class="counter__box">
-          <h1 class="t__40">
+          <h5 class="t__40 fs-1">
             <span class="counter__number" data-count="87"></span>+
-          </h1>
+          </h5>
           <p class="counter__text">Worldwide Customers</p>
         </div>
       </div>
@@ -373,7 +376,7 @@
               <img src="assets/img/projects/<?php echo $row['cover'] ?>" alt="<?php echo $row['alt_text'] ?>" />
               <div class="card__footer">
                 <div>
-                  <h5 class="t__22"><?php echo $row['title'] ?></h5>
+                  <h3 class="t__22 fs-5"><?php echo $row['title'] ?></h3>
                   <p class="last"><?php echo $row['cat'] ?></p>
                 </div>
                 <span class="border__full"></span>
@@ -495,7 +498,7 @@
                   <div class="user">
                     <img src="assets/img/review/<?php echo $row['profile'] ?>" alt="Client profile" />
                     <div>
-                      <h5 class="t__22 mb-0"><?php echo $row['name'] ?></h5>
+                      <h3 class="t__22 mb-0 fs-5"><?php echo $row['name'] ?></h3>
                       <p class="d-flex align-items-center"><img src="assets/img/review/<?php echo $row['country'] ?>"
                           alt="country_flag" class="avatar-sm " style="width: 20px;height: 15px; border-radius: 0;">&nbsp;
                         <?php echo $row['country_name'] ?>
@@ -650,7 +653,7 @@
                 ?></li>
               </ul>
               <h3 class="t__22">
-                <a href="blog/<?php echo $row['seo_url'] ?>"><?php echo $row['short_desc'] ?></a>
+                <a href="blog-detail/<?php echo $row['seo_url'] ?>"><?php echo $row['short_desc'] ?></a>
               </h3>
             </div>
             <img src="assets/img/blogs/<?php echo $row['cover'] ?>" alt="<?php echo $row['cover_alt_text'] ?>"
@@ -660,7 +663,7 @@
                 <?php echo $row['title'] ?>
               </p>
               <div>
-                <a href="blog/<?php echo $row['seo_url'] ?>" class="">
+                <a href="blog-detail/<?php echo $row['seo_url'] ?>" class="">
                   More Details <i class="ti-arrow-top-right"></i></a>
               </div>
             </div>

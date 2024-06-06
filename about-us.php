@@ -5,7 +5,12 @@
 
 <head>
   <?php include ("includes/head.php") ?>
-  <title>About Us | Webkye</title>
+  <title>About Us | Webkye Digital Marketing Agency</title>
+  <meta name="description"
+    content="Stand out with our creative teen team, pushing boundaries and delivering stellar digital results. Join us to elevate your brand online with fresh ideas and innovation.">
+  <link rel="canonical" href="https://webkye.in/about-us">
+  <meta name="keywords"
+    content="digital marketing agency, about us, creative team, online excellence, brand presence, dynamic minds, innovative solutions.">
 </head>
 
 <body>
@@ -25,10 +30,10 @@
             <div>
               <!-- Title srart-->
               <div class="transparent__btn">About Us</div>
-              <h2 class="t__40 pt__30">
+              <h1 class=" h2 t__40 pt__30">
                 Save Your Times And Money With
                 <span class="about__us">Us</span>
-              </h2>
+              </h1>
               <p class="pt__35">
                 What makes us stand out? We're a crew of creative teens who
                 are obsessed with pushing boundaries and crushing it online.
@@ -292,19 +297,19 @@
     <div class="container">
       <div class="counter__wapper">
         <div class="counter__box">
-          <h1 class=" t__40"> <span class="counter__number" data-count="5"></span>+</h1>
+          <h6 class="fs-1 t__40"> <span class="counter__number" data-count="5"></span>+</h6>
           <p class="counter__text">Years Of Experience</p>
         </div>
         <div class="counter__box">
-          <h1 class=" t__40"> <span class="counter__number" data-count="108"></span>+</h1>
+          <h6 class="fs-1 t__40"> <span class="counter__number" data-count="108"></span>+</h6>
           <p class="counter__text">Completed Project</p>
         </div>
         <div class="counter__box">
-          <h1 class=" t__40"> <span class="counter__number" data-count="98.09"></span>%</h1>
+          <h6 class="fs-1 t__40"> <span class="counter__number" data-count="98.09"></span>%</h6>
           <p class="counter__text">Customer Satisfied</p>
         </div>
         <div class="counter__box">
-          <h1 class=" t__40"> <span class="counter__number" data-count="87"></span>+</h1>
+          <h6 class="fs-1 t__40"> <span class="counter__number" data-count="87"></span>+</h6>
           <p class="counter__text">Worldwide Customers</p>
         </div>
       </div>
@@ -527,7 +532,7 @@
                 ?></li>
               </ul>
               <h3 class="t__22">
-                <a href="#"><?php echo $row['short_desc'] ?></a>
+                <a href="blog-detail/<?php echo $row['seo_url'] ?>"><?php echo $row['short_desc'] ?></a>
               </h3>
             </div>
             <img src="assets/img/blogs/<?php echo $row['cover'] ?>" alt="<?php echo $row['cover_alt_text'] ?>"
@@ -537,7 +542,7 @@
                 <?php echo $row['title'] ?>
               </p>
               <div>
-                <a href="blog/<?php echo $row['seo_url'] ?>" class="">
+                <a href="blog-detail/<?php echo $row['seo_url'] ?>" class="">
                   More Details <i class="ti-arrow-top-right"></i></a>
               </div>
             </div>

@@ -57,8 +57,8 @@
                 <div>
                     <h3 class="footer__info_group t__22">About Us</h3>
                     <ul>
-                        <li><a href="href.html">Contact Us</a></li>
-                        <li><a href="href.html">About Us</a></li>
+                        <li><a href="contact-us">Contact Us</a></li>
+                        <li><a href="about-us">About Us</a></li>
                         <li><a href="href.html">Terms & Condition</a></li>
                         <li><a href="href.html">Privacy Policy</a></li>
                         <!-- <li><a href="href.html">Make a Payment</a></li> -->

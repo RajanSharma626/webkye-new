@@ -25,6 +25,7 @@ if (isset($_GET['project']) && $_GET['project'] != '') {
   <title><?php echo $projectDetail['meta_title'] ?> | Webkye</title>
   <meta name="description" content="<?php echo $projectDetail['meta_desc'] ?>">
   <meta name="keywords" content="<?php echo $projectDetail['meta_keywords'] ?>">
+  <link rel="canonical" href="https://webkye.in/<?php echo $_GET['project'] ?>">
 </head>
 
 <body>

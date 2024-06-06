@@ -25,6 +25,7 @@ if (isset($_GET['service']) && $_GET['service'] != '') {
   <title><?php echo $serviceDetail['meta_title'] ?> | Webkye</title>
   <meta name="description" content="<?php echo $serviceDetail['meta_desc'] ?>">
   <meta name="keywords" content="<?php echo $serviceDetail['meta_keyword'] ?>">
+  <link rel="canonical" href="https://webkye.in/<?php echo $_GET['service'] ?>">
 </head>
 
 <body>

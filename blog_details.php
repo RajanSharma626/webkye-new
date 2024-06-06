@@ -24,6 +24,18 @@ if (isset($_GET['blog']) && $_GET['blog'] != '') {
   <title><?php echo $blogDetail['title'] ?></title>
   <meta name="description" content="<?php echo $blogDetail['meta_desc'] ?>">
   <meta name="keywords" content="<?php echo $blogDetail['meta_keywords'] ?>">
+  <link rel="canonical" href="https://webkye.in/<?php echo $_GET['blog'] ?>">
+
+  <style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #fff;
+    }
+  </style>
 </head>
 
 <body>
@@ -42,7 +54,7 @@ if (isset($_GET['blog']) && $_GET['blog'] != '') {
             <!-- <li> <i class="fa fa-mail-reply"></i> Comments 06</li> -->
             <li> <i class="fa fa-calendar"></i> <?php echo date('d F, Y', strtotime($blogDetail['timestamp'])); ?></li>
           </ul>
-          <h2 class="t__40 pt__30"><?php echo $blogDetail['title'] ?></h2>
+          <h1 class=" fs-2 t__40 pt__30"><?php echo $blogDetail['title'] ?></h1>
 
           <div class="blog_part">
             <?php echo $blogDetail['blog'] ?>
@@ -189,7 +201,7 @@ if (isset($_GET['blog']) && $_GET['blog'] != '') {
                 ?></li>
               </ul>
               <h3 class="t__22">
-                <a href="#"><?php echo $row['short_desc'] ?></a>
+                <a href="blog-detail/<?php echo $row['seo_url'] ?>"><?php echo $row['short_desc'] ?></a>
               </h3>
             </div>
             <img src="assets/img/blogs/<?php echo $row['cover'] ?>" alt="<?php echo $row['cover_alt_text'] ?>"
@@ -199,7 +211,7 @@ if (isset($_GET['blog']) && $_GET['blog'] != '') {
                 <?php echo $row['title'] ?>
               </p>
               <div>
-                <a href="blog/<?php echo $row['seo_url'] ?>" class="">
+                <a href="blog-detail/<?php echo $row['seo_url'] ?>" class="">
                   More Details <i class="ti-arrow-top-right"></i></a>
               </div>
             </div>

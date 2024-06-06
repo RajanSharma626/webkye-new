@@ -795,7 +795,7 @@ p {
     z-index: 10
 }
 
-.banner__content_title h5 {
+.banner__content_title h1 {
     padding: 13px 19px;
     background-color: rgba(255, 255, 255, .06);
     color: var(--btn-clr);
@@ -805,7 +805,7 @@ p {
     margin-bottom: 35px
 }
 
-.banner__content_title h3 {
+.banner__content_title h2 {
     color: var(--primary-clr);
     font-size: 72px;
     line-height: 82px;
